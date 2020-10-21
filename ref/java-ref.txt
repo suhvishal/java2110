@@ -1,0 +1,53 @@
+
+Envionment Setup 
+-----------------------
+    1. jdk or openjdk 8
+    2. IDE / Editor 
+            - Eclipse for JEE
+            - IntellIj
+            - STS - Spring tool suite 
+    3. NodeJS 12.x 
+    4. Database 
+            - MySQL community 
+            - Oracle 
+            - H2 
+
+    Java 
+    -----------
+    Programming language        : programming capabilities 
+
+    Runtime Environment         : 
+
+    Standard Library            : 
+
+
+
+    JVM - java virtual machine 
+        - responsible to execute program on the given platform 
+
+    JRE - java runtime environment 
+            - JVM + standard libraries 
+
+    JDK - Java Development kit 
+            - JRE + development tools i.e. javac, jar, debug, etc.
+
+
+    Java SE 
+        - standard libraries i.e. collection, util, io, etc. 
+        - core java
+
+    Java EE 
+        - enterprise applications 
+        - component based 
+                - web components 
+                        servlet, JSP, JSTL, EL 
+                - distributed tech  
+                        CORBA, EJB, web services 
+        - Service oriented 
+                - JTA, JMS, JAVA MAIL, JCA 
+                
+        - protocol based 
+                - HTTPServlet 
+
+    Java ME 
+        - small devices 

@@ -45,9 +45,112 @@ Envionment Setup
                         CORBA, EJB, web services 
         - Service oriented 
                 - JTA, JMS, JAVA MAIL, JCA 
-                
+
         - protocol based 
                 - HTTPServlet 
 
     Java ME 
         - small devices 
+
+
+   1 hr 
+    ------------
+        - java basics 
+            - variable in java 
+                    - local variables 
+
+                        public class X {
+
+                            void methodA(){
+                                 int i;
+
+                                //
+                                //
+
+                            }
+                        }
+
+                    - instance variables 
+
+                    - static variables 
+
+            - data types
+
+                1. primitive types 
+
+                    byte        -128 to 127     1 byte
+                    short       
+                    int 
+                    long 
+                    float
+                    double 
+                    boolean 
+                    char 
+
+                2. Reference types 
+                        - variable of type arrays, strings, class, interfaces are ref types 
+                        - they store reference to the objects in memory 
+
+            - decision making 
+                    if statement 
+                    if-else statement 
+                    if-else if - if statement 
+                    switch statement 
+
+            - looping statement 
+                    - while loop 
+                    - for loop 
+                    - do while 
+
+
+
+            int a = 10;
+            int b = 20;
+
+            - Arrays 
+            ---------------
+                    - store multiple values/elements of same type 
+                    - arrays are objects in java 
+                    - array size is fixed 
+
+
+            - declare array variable 
+
+                    <datatype>[] array-var-name;
+
+                    int[] nums;    
+
+            - create an array 
+                    array-var-name = new <datatype>[size];
+                    nums = new int[5];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    class Product {
+
+        static String category;
+
+       
+        
+        int pid;
+        String pname;
+        float price;
+    }
+
+
+    Product p1 = new Product();         pid   pname   price 

@@ -392,4 +392,92 @@ Array Manipulation
                 - Maintainability 
                 - Extendibility 
 
-                
+                - use 'extends' keyword to inherit from a super class 
+                - a class can extend to only one class 
+                - inheritance create IS-A relationship 
+                - **in java, Oject class is the supermost class for all the classes implicitely 
+
+                                Object 
+                                  |
+                                  |--> boolean equals(Object o)
+                                  |-> int hashCode()
+                                  |-> void wait(), void notify(), void notifyAll()
+                                  |
+                                Person 
+                                   |
+                                Employee 
+
+        Association / Aggregation / Composition 
+        -------------------------------------------
+                - Association creates HAS-A relationship 
+                - when a class has ref to another class 
+
+
+
+                Aggregation:
+                        - the objects do not own each other 
+                        - the object can exist without another object 
+
+                        - School  --- Student 
+
+                Composition
+                        - strong association 
+                        - one object owns another object 
+          
+                        House   ----> Rooms 
+
+                        Car ----> Engine 
+
+
+        class Address {
+                ..street, city, pin, state, ....
+        }
+
+
+        class Supplier {
+
+                Address address;
+        }
+
+
+        class Customer {
+
+                Address[] address;
+
+
+        }
+
+        abstract classes
+        -------------------
+
+
+        Abstract method
+        -------------------
+                - a method declared with 'abstract' keyword and without body
+
+        interface
+        -------------------
+                - set of requirements that a class has to implement 
+                - interface has only public abstract methods (JAVA 7) and public static final data members  
+                - a class  has to implement the interface and override the abstract methods 
+
+                interface Taxable {
+
+                        public abstract double calcTax(double taxRate);
+                }
+
+                class Toys implements Taxable {
+
+                        public double calcTax(double taxRate){
+                                // some code to calc tax value 
+                                //return tax value
+                        }
+                }
+
+                class Cloths implements Taxable {
+
+                        public double calcTax(double taxRate){
+                                // some code to calc tax value 
+                                // return tax value
+                        }
+                }

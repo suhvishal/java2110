@@ -112,7 +112,7 @@ Envionment Setup
                     - store multiple values/elements of same type 
                     - arrays are objects in java 
                     - array size is fixed 
-
+                    - you can have array of primitives as well as objects 
 
             - declare array variable 
 
@@ -154,3 +154,228 @@ Envionment Setup
 
 
     Product p1 = new Product();         pid   pname   price 
+
+
+Array Manipulation
+----------------------
+
+        int[] arr = {10,40,503,20,40,20,30,40};
+
+        for(int i=0; i<arr.length; i++){
+            ....
+            ...
+        }
+
+        Enahanced for loop 
+        -------------------------
+        for(int loopVar : arr){
+
+        }
+
+        java.util package provides "Arrays" class, which provides methods to manipulate arrays 
+
+        - int binarySearch(int[] arr, int searchValue)
+        - boolean equals(int[] arr)
+        - copyOf()
+        - sort()
+
+                int[] arr1 = {10,20,30};
+
+                int[] arr2 = Arrays.copyOf(arr1, 2)
+
+
+    int[] arr1 = {1,2,3,3,4,4,43,43, .......................};
+
+	binarySearch(arr1, 0, 100, 77)
+
+
+    Employee[] empArr = ..............................................
+
+
+    Operators 
+    ---------------
+        - increment & decrement operator 
+                pre-increment                post-increment 
+                    ++x                         x++
+
+
+                pre-decrement                   post-decrement 
+                    --X                         x-- 
+
+
+
+            int a  = 10;
+            int b = ++a;
+            system.out.println(b)       //11
+            sysout.out.println(a)       //11
+
+
+       - Arithmetic operators 
+            + 
+            -
+            *
+            /
+            %
+
+                byte + byte         = int 
+                byte + short        = int 
+                byte + int          = int 
+                char + char         = int 
+                char + int          = int 
+                byte + char         = int 
+
+                int + long          = long 
+                float + double      = double 
+                long + long         = long 
+                long + float        = float 
+
+
+
+            - String Concatenation 
+            ----------------------
+                
+
+            - Relational operators 
+            --------------------------
+                    > 
+                    < 
+                    >=
+                    <=
+                    ==
+                    !=
+
+            - Assignment operators 
+                a = a + 1       a+=1 
+
+            - logical operators 
+
+
+
+        POJO - plain old java objects 
+
+                        class Employee {
+                             //data/logic    
+                        }
+
+
+        Java Beans 
+        ---------------
+
+                - java beans are used to represent a data or certain business operations 
+
+                - a class is called java bean, if it 
+                        - implements Serializable interface 
+                        - has a no-arg constructor 
+                        - has all the members declared as private 
+                        - has public getter/setter methods 
+
+
+        OOPS Concepts 
+        ---------------
+
+        object
+        -----------
+                - object oriented programming languages 
+                - object is an entity which has some state and behavior 
+
+                        i.e. a pen ---- state = name, type, color, size, etc.
+                                        behavior = write 
+                             a person 
+
+                             a bank account  --- state --- type, accountnumber, ......
+                                                behavior - open, close, ...
+
+        Class 
+        --------
+                - blueprint or template for objects 
+                - we use classes to describe a type / entity 
+
+        Object 
+        -------
+                - object is a living entity 
+                - once a class is created, you can create any number of objects of that type 
+
+
+        class <className> {
+
+                //instance members
+                //instance methods 
+                //static members 
+                //static methods 
+                //constructors 
+                //inner class
+                //abstract methods 
+        }
+
+        class Car {
+
+                //state/fields/datamembers/instance members
+                String type;
+                String model;
+                String color;
+                int speed;
+
+                //constructor / special method / doesn't have return type / called automatically while create object
+                //constructor is used to initalize values to the fields/datamembers
+                Car(){
+
+                }
+        }
+
+
+        class BankAccount {
+              
+                private long accountNumber;
+                private double balance;
+
+                public double getBalance(){
+                        return this.balance;
+                }
+
+                public void setBalance(double amount){
+                        //logic 
+                        this.balance = amount;
+                }
+
+                public long getAccountNumber(){
+                        return this.accountNumber;
+                }
+
+                //..
+                //...
+        }
+
+        BankAccount b1 = new BankAccount();
+         
+
+        Encapsulation
+        -------------
+                - hiding the state or internal representation of an object from outsite the class 
+                - allows controlling internal implementation
+                - declare all the fields/datamembers as private 
+                - provide  public getter/setter methods to access the data members 
+
+
+        Method overloading  / Static binding / compile time polymorphism / Early binding 
+        -------------------------------------------------------------------
+                - writing multiple methods with same name but diff parameters is called overloading 
+                - 2 methods are said to be overloaded when both method methods have same name but diff parameters 
+                                - parameters should be diff in either type or numbers 
+
+                - the right method is determined based on arguments passed while calling the method 
+                - this decision is taken at compile 
+                - in overloading exact match gets the highest priority
+                - child class arugment gets priority than parent argument 
+                - access modifier/ return type of the method is not considered in method overloading
+                - automatic promotion
+                        byte ---> short  |---- int -- long --- float --- double  
+                                  char   |
+                - in overloading, method with varargs has least priority                
+                - overloading resolution always take place at compile time 
+                        - the right method call is determined based on ref type (and not based on object type)
+
+        
+        this keyword
+
+
+        super keyword 

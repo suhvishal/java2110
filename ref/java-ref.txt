@@ -603,7 +603,141 @@ Array Manipulation
 
                 - Method Overriding / run time polymorphism / dynamic binding 
                 - redefine a super class method in child class using the same method 
-                        signature as super class 
+                        signature as super class
 
 
+                1. only inherited methods are overridden 
+                        class A {
+                                public void methodA(){}
+                        } 
+                        class B extends A {
+                                public void methodA(){}
+                        }
+                2. private, static, final methods of superclass cannot be overridden 
+
+                3. overridden method must have same signature i.e. same name, same parameters
+
+                4. overriding method must have same return type or subtype 
+
+                         class A {
+                                public Object methodA(){}
+                        } 
+                        class B extends A {
+                                public <anyClass> methodA(){}
+                        }
+                5. overriding method must not have more restrictive access 
+                        class A {
+                                protected void methodA(){}
+                        } 
+                        class B extends A {
+                                public void methodA(){}
+                        }
+
+
+        Encapsulation 
+        Inheritance 
+        Abstraction 
+        Polymorphism
+
+        String, StringBuilder, StringBuffer, StringTokenizer 
+        -------------------------------------------------------
+
+        String class 
+        ----------------
+                - create string object 
+                - String objects immutable / not modifiable 
+
+                1. String str = "Welcome";
+
+                2. String str = new String("welcome");
+
+                3. char[] charArr = {'h','e','l','l','o'}
+                        String str = new String(charArr);
+
+
+        String interning
+        ----------------
+                - jvm optimizes the amount of memory for string objects, by allocating only 
+                \       one single copy of each literal string in the pool 
+
+
+        String class methods 
+        ----------------------
+                int length()
+
+                String concat(String s);
+
+                boolean equals(String s)
+
+                boolean equalsIgnoreCase(String s)
+
+                char charAt(int index)
+
+                int compareTo(String s)
+
+                boolean startsWith(String s)
+
+                boolean endsWith(String s)
                 
+                int indexOf(String s)           int indexOf(char ch)
+
+                int lastIndexOf(String s)           int lastIndexOf(char ch)
+
+                String toUpperCase()
+
+                String toLowerCase() 
+
+                String[] split();
+
+        StringBuilder, StringBuffer
+        ------------------------------
+
+
+
+        StringTokenizer
+        ----------------
+                - allows to break a string into tokens 
+                - StringTokenizer(String str)
+                - StringTokenizer(String str, String delimiter)
+                -...
+
+        Wrapper classes 
+        -----------------
+                - for each primitive there is a corresponding referece type availalble at java.lang package 
+                                i.e. for primitive int there is class called as Integer 
+                - whever you want to treat primitives as ref types i
+                        i.e. working with Collections 
+                        i.e. working with Generics 
+                - wrapper classes provides conversion methods 
+
+                      int i =  Interger.parseInt("132");
+
+                byte                    Byte 
+                short                   Short 
+                int                     Integer 
+                long                    Long 
+                char                    Character
+                boolean                 Boolean 
+                float                   Float 
+                double                  Double  
+
+
+        - Boxing 
+                - conversion a primitve type into ref type 
+
+
+                public void methodA(Object obj){
+
+                }
+
+
+                methodA(20);            //Integer object
+
+
+
+        - Unboxing 
+                - conversion of ref type to primitive type 
+
+
+
+

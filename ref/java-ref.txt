@@ -447,23 +447,129 @@ Array Manipulation
 
         }
 
+
+        final variable - cannot change value of variable once assigned 
+
+        final method    - cannot be overridden in subclass 
+
+        final class - cannot be sub-classed 
+
+        class X{
+
+                X(){
+                        //initialize default values to the members 
+                }
+
+                 X(int a){
+
+                }
+        }
+
+        X x = new X(3);
+
         abstract classes
         -------------------
+                - we cannot instantiate an abstract class 
+                - abstract classes can have public/private/protected members 
+                - can have constructors, instance methods 
+                - can have abstract methods 
+
+                abstract class Car {
+
+                        //data members/fields/instance members
+                        
+                        //instance methods
+
+                        //constructors
+
+                        //abstract methods 
+                }
+
+                class TataCar extends Car {
+
+                }
+
+                class BMWCar extends Car {
+
+                }
+
 
 
         Abstract method
         -------------------
                 - a method declared with 'abstract' keyword and without body
+                - an abstract method must be implemented by its immediate subclass
 
-        interface
+                abstract class Car {
+
+                        public abstract void move();
+                       
+                }
+
+                class TataCar extends Car {
+
+                        public void move(){
+                                sout("this car moves smooth")
+                        }
+                }
+
+                class BMWCar extends Car {
+
+                        //override the method of super class
+                        //re-define a super class method in subclass 
+                        public void move(){
+                                sout("this car moves fast");
+                        }
+                }
+
+                class XyzCar extends Car {
+                        //must override abstract method move();
+
+                }
+
+                Car car = new TataCar();
+                car.move();                     //TataCar's  move();
+
+                Car car = new BMWCar();
+                car.move();                     //BMWCar's move() method
+
+
+
+        Interface
         -------------------
                 - set of requirements that a class has to implement 
                 - interface has only public abstract methods (JAVA 7) and public static final data members  
                 - a class  has to implement the interface and override the abstract methods 
+                - a class can implement several interfaces 
+                - an interface can extend another interface 
+                - an interface can extends several interfaces 
+
+
+                        interface A {
+                                //methodA();
+                        }
+
+                        interface B {
+                                //methodB();
+                        }
+
+                        interface C extends A, B {
+                                //..
+                        }
+
+                        class X implements C{
+                                methodA(){}
+                                methodB(){}
+                                //...
+                        }
 
                 interface Taxable {
 
                         public abstract double calcTax(double taxRate);
+                }
+
+                interface Deliverable {
+                        public abstract void deliver();
                 }
 
                 class Toys implements Taxable {
@@ -474,10 +580,30 @@ Array Manipulation
                         }
                 }
 
-                class Cloths implements Taxable {
+                class Cloths implements Taxable, Deliverable {
 
                         public double calcTax(double taxRate){
                                 // some code to calc tax value 
                                 // return tax value
                         }
+
+                        public void deliver(){
+                                //...
+                        }
                 }
+
+
+        **a variable of type superclass can reference to child object 
+
+        Polymorphism / 
+        ---------------------
+                - a type can reference to diff objects at diff time, and based on the type of object 
+                        it is pointing to, we want to invoke appropriate method 
+                - this can be achieved through overriding 
+
+                - Method Overriding / run time polymorphism / dynamic binding 
+                - redefine a super class method in child class using the same method 
+                        signature as super class 
+
+
+                

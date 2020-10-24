@@ -905,11 +905,50 @@ Set<E> interface
 
         - Operations on set
         -------------------------
+                - creating a set 
+                - basic operations i.e. adding, removing, if set is empty, size of set etc. 
+                - searching
+                - iterating
+
+        - ** hashCode() and equals() 
+        --------------------------------
+                - whevener we work with any hashtable based collection, we have to override both equals() and hascode() correctly 
+                - hashCode()
+                        - returns an integer value representing the current instance of the class 
+                        - we have calculate this vlaue consistent with definition of equality of the calss 
+                        - if we override the equals() method, we have have to override hashCode()
+
+                - if two objects are equal, their hashcode is also equal 
+                - if two objects are not equal, they may or may not have identical hashcode
 
 
+        Natural ordering of elements 
+        -------------------------------
+                numbers         = alphanumeric 
+                string          = alphabetic 
+                date            = choronological 
 
 
+        Comparable<E> interface 
+        -------------------------
+                interface Comparable<E>{
+                        public int compareTo(E e);
+                }
 
+                the compareTo() method returns compare value 
+
+                        0       = both objects are same 
+                        >= 1     = the current object is greater than other object 
+                        <= 1     = the current object is less than other object 
+
+
+        Comparator<E> interface
+        ------------------------- 
+                - you can create external comparators 
+
+                        interface Comparator<E>{
+                                int compare(E objec1, E object2);
+                        }
 
 
 Queue<E> interface 
@@ -922,6 +961,74 @@ Queue<E> interface
  ---------------------
         -** not part of collection interface 
         - it models a collection of elements based on key-value pairs 
+        - Keys cannot be duplicated 
+
+        - map<K,V> interface methods 
+        ---------------------------------
+
+                        V put(K key, V value)
+
+                        V get(K key)
+
+                        boolean containsKey(Object key)
+
+                        boolean containsValue(Object value)
+
+                        Set<K> keySet()
+
+                        Collection<V> values();
+
+                        entrySet();
+
+
+        - Map<E> implementation classes
+        ------------------------------------
+
+                1. HashTable<K,V>
+                        - uses 'hashtable' as datastructure
+                        - synchronized
+                        - hashtable doesnt allow null key 
+
+                2. HashMap<K,V>
+                        - uses 'hashtable' as datastructure
+                        - not synchronized / not threadsafe 
+                        - hashmap allows one null key 
+
+                3. LinkedHashMap<K,V>
+                        - uses 'hashtable+double linked list' 
+                        - ensures insertion order 
+
+                4. TreeMap<K,V> 
+                        - maintains sorted order of keys 
+
+
+                class Manager{          //implement Comparable 
+                        
+                        //hashcode() and equals()
+
+
+                }
+
+                class Employee{
+
+                }
+
+
+                Map<Manager, List<Employee>> map = new TreeMap();               //or provide comparator 
+
+                map.put(m1, list1);
+                map.put(m1, list2);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -938,7 +1045,7 @@ Queue<E> interface
 
         =======================
                 **default implementatio of equals() method in object class 
-                **Preserving equality contract ---- equals()
+                **Preserving equality contract ---- equals() and hashCode()
                 **ListIterator, Iterator and Enumerator 
         ========================
 
@@ -967,4 +1074,51 @@ Queue<E> interface
 
 
 
-        
+        com.demo.model 
+        class User {
+
+                userid 
+                email 
+                password 
+                fullname        
+        }
+
+        com.demo.client 
+
+        UserMainTest{
+                psvm(){
+                        //CRUD operation on the User
+                }
+        }
+
+        com.demo.dao
+        class UserDAO{
+
+                //collection object
+
+                User create(User u){
+                        //insert the given user into a collection 
+                }
+
+                User update(User u){
+                        //update an existing user based on given details 
+
+                }
+
+                User get(int userid){
+
+                }
+
+                User delete(int userid){
+
+                }
+
+                List<User> getAll(){
+
+                }
+
+                int count(){
+
+                }
+
+        }

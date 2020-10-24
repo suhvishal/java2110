@@ -739,5 +739,232 @@ Array Manipulation
                 - conversion of ref type to primitive type 
 
 
+Java Essentials 
+-------------------
+        - Java Basics 
+        - J2EE, J2SE, J2ME
+        - JVM, JRE, JDK 
+        - Decision making 
+        - looping statements 
+        - operators / expressions 
+        - arrays 
+        - String 
+        - OOPS 
+        - Object class i.e. toString()
 
 
+Standard Library 
+------------------
+
+        Collection Framework 
+        --------------------
+                - provides dynamically allocated data structures 
+                - java.util package provides set of interfaces, classes  
+
+
+                        Iterable<E> interface 
+                                |
+                        Collection<E>  Interface 
+                                |
+                                |
+                                |
+                                |
+        -------------------------------------------------------------------------------------------
+        List<E> interface                 Set<E> interface                     Queue<E> interface 
+                |                               |                                       |
+                |                               |                                       |
+                |                               |                                       |
+        ArrayList<E>                        HashSet<E>                                  |
+        LinkedList<E>                       LinkedHashSet<E>                    ---------------------------------------------------------------------------------
+        Vector<E>                           TreeSet<E>                         Deque<E> interface              BlockingQueue<E> interface               PriorityQueue<E>
+        Stack<E>                                                                        |                               |
+                                                                ---------------------------------------           ArrayBlockingQueue<E>
+                                                                BlockingDeque<E> Interface      ArrayDeque<E>
+                                                                        |
+                                                                ArrayBlockingDeque<E>
+
+
+
+                                        Map<K,V> interface 
+                                                |
+                                        HashMAp<K,V>
+                                        LinkedHashMap<K,V>
+                                        TreeMap<K,V>
+
+
+
+
+
+
+
+
+Collection<E>  Interface 
+--------------------------
+        - it is the supermost interface in collection hierarchy 
+        - Collection interface methods ....
+                boolean add(Object obj)
+                boolean addAll(Collection c)
+                boolean remove(Object obj)
+                int size() 
+                boolean contains(Object obj)
+                .....
+
+List<E> interface 
+---------------------
+        - subinterface of Collection interface
+        - it models an index based collection of items
+        - inserts the elements based on insertion order 
+        - allows duplicates
+        - list interface methods 
+                - boolean add(int index, Object obj)
+                - boolean remove(int index)
+                - .....
+
+
+        - implementation classes of List<E> interface 
+
+                1. ArrayList<E>
+                        - uses 'resizable array' as data structure 
+                        - initial size = 10 
+                        - performance is slower compared to LinkedList i.e. lot of shifting is required while inserting/removing elements 
+
+                2. LinkedList<E>
+                        - uses 'double linked list' as data structure 
+
+                3. Vector<E>
+                        - similar to arraylist class 
+                        - uses 'resizable array' as data structure 
+                        - it is synchronized 
+
+                4. Stack<E> 
+                        - similar to arraylist class 
+                        - uses 'resizable array' as data structure 
+                        - it is synchronized 
+                        - uses LIFO approach 
+
+
+        - Creating a list 
+
+                non-generic lists
+                --------------------
+                        ArrayList list = new ArrayList();
+                        ArrayList list = new ArrayList(int capacity);
+
+                        LinkedList list = new LinkedList();
+                Generic lists
+                --------------
+                        ArrayList<Integer> numsList = new ArrayList();
+                        LinkedList<String> namesList = new LinkedList();
+
+                        List<Integer> numslist = new ArrayList();
+
+
+
+        - Operations on list 
+        -------------------------
+                -- add, remove, retrieve elements from the list 
+                -- 
+
+
+Set<E> interface 
+-------------------
+        - subinterface of Collection interface
+        - it models a collection of unique elements, doesn't allow duplicates 
+         
+                                        Collection<E> interface
+                                                |
+                                                |
+                                           Set<E> interface 
+                                                |
+                                                |
+                                                |
+                        -------------------------------------------------------
+                        HashSet<E>                                      TreeSet<E>
+                            |
+                            |
+                        LinkedHashSet<E>
+
+
+        - implementation classes of Set<E> interface 
+
+                1. Hashset<E>
+                        - uses 'hashtable' datastructure 
+                        - not synchronized
+                        - doesn't not guarantee the order or insersion 
+
+                2. LinkedHashSet<E>
+                        - uses 'hashtable + double linked list' datastructure 
+                        - not synchronized
+                        - maintains insertion order
+
+                3. TreeSet<E>
+                        - uses 'balanced tree' datastructure 
+                        - not synchronized
+                        - maintains sorted order of elements 
+
+
+        - Operations on set
+        -------------------------
+
+
+
+
+
+
+
+Queue<E> interface 
+------------------
+        - subinterface of Collection interface
+        - it models a collection of items with FIFO approach, elements are stored in queue 
+
+
+ Map<K,V> interface
+ ---------------------
+        -** not part of collection interface 
+        - it models a collection of elements based on key-value pairs 
+
+
+
+
+        boolean equals(Object obj) method
+        ----------------------------
+                - this method belongs to object class 
+                - we can override the equals() method in any class, and use it to compare objects 
+
+
+
+
+
+
+        =======================
+                **default implementatio of equals() method in object class 
+                **Preserving equality contract ---- equals()
+                **ListIterator, Iterator and Enumerator 
+        ========================
+
+
+
+
+
+
+        IO 
+
+
+        Exception Handling 
+
+
+        Threading / Concurrency API 
+
+
+        JDBC 
+
+
+
+
+
+
+
+
+
+
+        

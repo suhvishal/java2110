@@ -776,7 +776,7 @@ Standard Library
                 |                               |                                       |
         ArrayList<E>                        HashSet<E>                                  |
         LinkedList<E>                       LinkedHashSet<E>                    ---------------------------------------------------------------------------------
-        Vector<E>                           TreeSet<E>                         Deque<E> interface              BlockingQueue<E> interface               PriorityQueue<E>
+        Vector<E>                            <E>                               Deque<E> interface              BlockingQueue<E> interface               PriorityQueue<E>
         Stack<E>                                                                        |                               |
                                                                 ---------------------------------------           ArrayBlockingQueue<E>
                                                                 BlockingDeque<E> Interface      ArrayDeque<E>
@@ -790,11 +790,6 @@ Standard Library
                                         HashMAp<K,V>
                                         LinkedHashMap<K,V>
                                         TreeMap<K,V>
-
-
-
-
-
 
 
 
@@ -875,15 +870,20 @@ Set<E> interface
                                                 |
                                                 |
                                            Set<E> interface 
-                                                |
+                                                |---------> descrives methods to perform basic operations 
+                                                |---------> add(), remove(), size(), contains()...
                                                 |
                                                 |
                         -------------------------------------------------------
-                        HashSet<E>                                      TreeSet<E>
-                            |
-                            |
-                        LinkedHashSet<E>
-
+                        HashSet<E>                                     SortedSet<E> interface 
+                            |                                                   |----> describes some additional methods 
+                            |                                                   |---> subSet(from, to), headSet(to), tailSet(from), first(), last()
+                        LinkedHashSet<E>                                        |
+                                                                        NavigableSet<E> interface 
+                                                                                |----> descrives some more additional methods for navigation
+                                                                                |---> lower(), floor(), ceiling(), higher(), descendingSet(), descendingIterator()
+                                                                                |
+                                                                            TreeSet<E>
 
         - implementation classes of Set<E> interface 
 
@@ -963,6 +963,21 @@ Queue<E> interface
         - it models a collection of elements based on key-value pairs 
         - Keys cannot be duplicated 
 
+
+                                MAp<K,V> interface 
+                                        |
+                                        |
+                                        |
+                                        |
+                -----------------------------------------------------
+                HashMap<K,V>                               SoretedMap<K,V> interface 
+                     |                                              |         
+                LinkedHashMap<K,V>                                  |
+                                                            NavigableMap<K,v> interface 
+                                                                    |
+                                                                TreeMap<K,V>
+
+
         - map<K,V> interface methods 
         ---------------------------------
 
@@ -1020,6 +1035,76 @@ Queue<E> interface
                 map.put(m1, list2);
 
 
+        - Queue<E> interface                                                    Collection<E> interface 
+        -------------------------                                                       |
+                                                                                Queue<E> interface 
+                                                                                        |
+                                                                                        |
+                                                                                        |
+                                                     -----------------------------------------------------------------------------------------------------------------
+                                                     LinkedList<E>              Deque<E> interface              BlockingQueue<E> interface               PriorityQueue<E>
+                                                                                        |                               |
+                                                                ---------------------------------------                 |
+                                                                BlockingDeque<E> Interface      ArrayDeque<E>        ---------------------------------------------
+                                                                        |                                            ArrayBlockingQueue<E>      PriorityBlockingQueue<E>
+                                                                ArrayBlockingDeque<E>
+
+        Queue operations
+        -------------------
+                - insert operation 
+                - remove operation 
+                - examine operation
+
+
+        
+        Queue<E> interface methods 
+        ---------------------------
+
+                insert                  add(e)                  offer(e)
+
+                remove                  remove()                poll()
+
+                examine                 element()               peek()
+
+
+        Deque<E> interface methods 
+        ------------------------
+
+                insert                  add(e)                  offer(e)
+                                        addFirst(e)             offerFirst(e)
+                                        addLast(e)              offerLast(e)
+
+                remove                  remove()                poll()
+                                        removeFirst()           pollFirst()
+                                        removeLast()            pollLast()
+
+                examine                 element()               peek()
+                                        getFirst()              peekFirst()
+                                        getLast()               peekLast();
+
+        BlockingQueue<E> interface methods 
+         ----------------------------------
+
+                insert                  add(e)                  offer(e)                put(e)
+
+                remove                  remove()                poll()                  take()
+
+                examine                 element()               peek()
+
+
+        BlockingDeque<E> Interface methods 
+        ------------------------------------
+                insert                  add(e)                  offer(e)                put(e)
+                                        addFirst(e)             offerFirst(e)           putFirst(e)
+                                        addLast(e)              offerLast(e)            putLast(e)
+
+                remove                  remove()                poll()                  take()
+                                        removeFirst()           pollFirst()             takeFirst()
+                                        removeLast()            pollLast()              takeLast()
+
+                examine                 element()               peek()
+                                        getFirst()              peekFirst()
+                                        getLast()               peekLast();
 
 
 
@@ -1030,6 +1115,29 @@ Queue<E> interface
 
 
 
+        Implementation classes of Queue Interface 
+        -------------------------------------------
+                1. LinkedList 
+                        List list = new LinkedList();
+                        Queue queue = new LinkedList();
+
+                2. PriorityQueue 
+                        - maintains sorted order of elements 
+
+                3. ArrayDeque 
+                        - double headed queue 
+
+                4. ArrayBlockingQueue 
+                        - it is concurrent / synchronized
+                        - it is capacity based queue 
+                        - while inserting a new element, if the queue is full, it will be kept on waiting 
+                                        untill space become availalble
+                                
+                5. PriorityBlockingQueue
+                        - similar to ArrayBlockingDeque, but maintains sorted order of elements 
+
+                6. DelayQueue 
+                        - time based scheudling queue 
 
 
 
@@ -1075,7 +1183,7 @@ Queue<E> interface
 
 
         com.demo.model 
-        class User {
+        class Users {
 
                 userid 
                 email 

@@ -1106,15 +1106,6 @@ Queue<E> interface
                                         getFirst()              peekFirst()
                                         getLast()               peekLast();
 
-
-
-
-
-
-
-
-
-
         Implementation classes of Queue Interface 
         -------------------------------------------
                 1. LinkedList 
@@ -1147,10 +1138,6 @@ Queue<E> interface
                 - we can override the equals() method in any class, and use it to compare objects 
 
 
-
-
-
-
         =======================
                 **default implementatio of equals() method in object class 
                 **Preserving equality contract ---- equals() and hashCode()
@@ -1158,14 +1145,150 @@ Queue<E> interface
         ========================
 
 
+        IO  - Input / Output 
+        -------------------------
+                - java uses the concept of 'streams' to perform I/O 
+
+                - Stream 
+                        - a sequence of bytes, used to carry data from one place to another place 
+                        - input stream is used to read data from diff input source 
+                        - output stream is used to write data to diff output destinations 
+
+                - java.io package provides diff classes which represents diff type of Streams 
+                - all the classes in java.io package are categorized into... 
+
+                        1. byte based stream classes 
+                                - handle I/O on bytes 
+
+                                InputStream                                     OutputStream 
+                                  |->                                                   |->
+                                  |->  DataInputStream                                  |->
+
+                        2. character based steram classes 
+                                - handle I/O on characters 
+
+                                Reader                                  Writer 
+                                 |->                                     |->
 
 
 
+                Input operations from keyboard 
+                -------------------------------------
+                        1. Scanner class 
+                        2. DataInputStream
+                        3. InputStreamReader
 
-        IO 
 
+
+        - InputStreadReader and OutputStreamWriter 
+                - read/write character by character 
+                - read/write with the given encoding 
+
+        - FileReader and FileWriter 
+                - read/write character by character 
+
+        - BufferedReader and BufferedWriter 
+                - reads/writes chunk of data at the from/to the disk 
+
+        - FileInputStream and FileOuputStream 
+                - read/write byte by byte 
+
+        - BufferedInputStream and BufferedOutputStream 
+                - read/write operation in bulk 
+
+        - DataInputStream and DataOutputStream 
+                - reads/writes primitive values 
+
+        - ObjectInputStream and ObjectOutputStream
+
+        
 
         Exception Handling 
+        ---------------------------
+                - any unwated / unexpected event that disturbs normal flow of the program is called Exception 
+                - java provides diff classes to represent the unexpected events ie.. type of exception, message, stack trace
+
+                - Why exception occures 
+                        - invalid input by user 
+                        - wrong logic 
+                        - failure in physical resources 
+                        - 
+
+                1. find the problem (create an object of Exception type )
+                2. inform someone that an error has occured (throw the exception object)
+                3. someone would received the error information (catching the exception)
+                4. take corrective actions (handling exceptions )
+
+
+                Runtime Stack Mechanism
+                ---------------------------
+                        - for every thread JVM will create a runtime stack 
+
+
+                Default Exception handling
+                -------------------------
+                        - in our program inside a method if an exception raised, that method is responsible to create an object of Exception and it should include the information about exception 
+                                i.e. name of exception 
+                                description of exception 
+                                location of exception (stack trace)
+                        - after creating exception object, it is handed over to JVM 
+                        - JVM will check whether any corresponding method contain any execption handling code or not 
+                        - if the method doesn't contain any exception handling code, then JVM terminates the method abnormally
+                                and removes the stackframe 
+                        - JVM will check the caller method for any exception handling code...
+                                if not, then JVM terminates the caller method abnormally as well and removes the stackframe 
+                        - this process will be continued until main();
+                                and even the main() also doesnt have any exception handling code.. 
+                                then JVM handovers the exception object to "DEfault Exception handler"  
+                        - the default exception handler will terminate the program and prints the exception information 
+
+
+                Hierachy of Exception class
+                -----------------------------
+
+                                                Throwable 
+                                                    |
+                          ------------------------------------------------------------------------
+                          Error                                                         Exception
+                                                                                            | 
+                                        --------------------------------------------------------------------------------------------
+                                        RuntimeException                       IOException              SQLException            .....
+                                        |-> ArithmeticException
+                                        |-> NullPointerException
+                                        |-> ClassCastException 
+                                        |-> IndexOfBoundsException 
+                                        ....
+
+                Checked exceptions
+                        - exception that must be handled using try- catch block 
+                                otherwise you can declare it to be thrown
+
+                Unchecked exceptions 
+                        - all the RuntimeExceptions are unchecked 
+
+
+                how to handle exception 
+                --------------------------
+                        1. using try catch block 
+
+                                        try {
+                                                //code to be monitored 
+                                                //..
+                                                //..
+
+                                        }catch(InputMismatchException e){
+                                                //print a message
+                                                //log the exceptions 
+                                        }
+
+
+
+
+
+
+
+
+
 
 
         Threading / Concurrency API 

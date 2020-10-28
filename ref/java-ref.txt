@@ -1378,7 +1378,22 @@ Queue<E> interface
                         - this is called joining a thread
                         - using join() method  
 
+
+                Concurrency API 
+                -----------------
+                        - java.util.concurrent 
+                                        - provides many utility classes useful in concurrent programs 
+                                        - i.e. Executors, thread pool management, scheduled task execution 
+
+                        1. Execute tasks by multiple threads using managed thread pool 
+                                - ExecutorService 
+
+
+
         SQL
+        ------------
+                - structured query language 
+                
 
         JDBC 
 

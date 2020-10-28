@@ -1281,18 +1281,104 @@ Queue<E> interface
                                                 //log the exceptions 
                                         }
 
+                                ** try with multiple catch blocks 
+                                        try {
+                                                //code to be monitored 
+                                                //..
+                                                //..
 
+                                        }catch(InputMismatchException e){
+                                                //print a message
+                                                //log the exceptions 
+                                        }catch(ArithmeticException e){
+                                                //print a message
+                                                //log the exceptions 
+                                        }
+                                        catch(SomeOtherException e){
+                                                //print a message
+                                                //log the exceptions 
+                                        }catch(Exception e){
+                                                //generic corrective actions 
+                                        }
+                        2. finally block 
+                        ------------------
+                                FileInputStream fis = null;
 
+                                 try {
+                                        fis = new FileInputStream("somefile.txt");
 
+                                        //do some operations on the file...
 
+                                           
+                                 }catch(Exception e){
 
+                                 }finally{
+                                         if(fis!=null)
+                                                fis.close()  
+                                 }
+                        3. try with resources block 
+                                try(fis = new FileInputStream("somefile.txt")) {
+                                        //do some operations on the file...         
+                                 }catch(Exception e){
 
+                                 }
 
+                        4. throws keyword 
+                        ----------------------
+                                - thorows keyword is used to declared only checked exceptions 
+                                - we delegate the reponsibility of exception handling to the caller 
+                                - we can use throws keyword with only methdos/constructors
+                                - we can throws keyword only for Throwable objects 
 
+                        5. throw 
+                        ---------------
+                                - to manually hand over the exception object to JVM 
 
 
         Threading / Concurrency API 
+        -------------------------------
+                - ability to execute more than 1 tasks at a time 
+                - each task is executed in a separate thread 
+                - concurrency is achieved by sharing CPU's processing time amoung the threads 
 
+                - advantages    
+                --------------- 
+                        - increase performance & productivity 
+                        - high responsiveness 
+                        - leads to more appropriate program structure 
+
+                - challenges 
+                        - ensuring the data consistency 
+                        - to avoid deadlock 
+
+
+                - main thread
+                ------------------
+                        - all java programs are always started with one thread - called as main thread 
+                        - from that thread you can create another threads 
+
+                Thread class 
+                ----------------
+                        - represents a unit of execution 
+
+                Runnable interface 
+                ----------------------
+                        - represents a task that can be executed by a thread 
+        
+                how to pause a thread 
+                --------------------
+                        - you can make currently running thread pauses its execution by invoking Thread.sleep(milliseconds) method 
+
+                                Thread.sleep(4000); 
+                how to interrupt a thread
+                -------------------------------
+                        - interrupting a thread can be used to stop or resume the execution of that thread from another thread 
+
+                how to make a thread waits for another thread 
+                        - this is called joining a thread
+                        - using join() method  
+
+        SQL
 
         JDBC 
 

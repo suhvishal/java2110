@@ -1,13 +1,17 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ExceptionDemo1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 
 		System.out.println("this is main... ");
 		method1();
+		
+		FileInputStream fis = new FileInputStream("abc.txt");
 
 		System.out.println("main ends...");
 	}

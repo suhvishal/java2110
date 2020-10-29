@@ -1393,10 +1393,61 @@ Queue<E> interface
         SQL
         ------------
                 - structured query language 
-                
+                - execute queries against database 
 
-        JDBC 
+        JDBC API
+        ----------      
+                - jdbc api is a specification / standard 
 
+
+                - Driver 
+                        - helps to communciate with the database 
+                        - types of drivers      
+                                1. TYPE I - JDBC-ODBC Bridge Driver 
+                                2. TYPE II - Native Library 
+                                3. TYPE III - jdbc-net, pure java driver 
+                                4. TYPE IV - thin driver  / pure java driver 
+
+                - DriverManager 
+                        - helps to create / manage connection using appropriate driver 
+                        - DriverManager.getConnection("url", "user", "pass");
+
+                - Connection
+                        - represents the connection with the database  
+
+                - Statement 
+                        - object represents sql query and helps to submit/execute the query to the db
+
+
+                        1. Statement object 
+
+                             Statement stmt  =   conn.createStatement();
+
+                             - methods of Statement object 
+                             -------------------------------
+                                int executeUpdate(String sql)
+                                        - INSERT / UPDATE / DELETE operations 
+                                        - returns a number representing no. of rows affected 
+
+                                ResultSet executeQuery(String sql)
+                                        - SELECT operations 
+                                        - it returns an object of ResultSet, which represents a table of data fetched by the seelct query 
+
+                                boolean execute(String sql)
+                                        - it is used to execute any query 
+                                        - returns true if the query create any resultset object 
+
+
+                        2. PreparedStatement object 
+
+                             PreparedStatement stmt = conn.preapreStatement(sql);
+
+                        3. CallableStatement object 
+
+                             CallableStatement stmt = conn.preapreCall()
+
+
+        ODBC  - open database connectivity 
 
 
 

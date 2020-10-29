@@ -1447,12 +1447,22 @@ Queue<E> interface
                              CallableStatement stmt = conn.preapreCall()
 
 
-        ODBC  - open database connectivity 
+        ResultSet object 
+        ------------------------
 
+                - represents the table of data fetched from db 
+                - resultset object has a cursor, which by default points to the row before 1st row 
+                - .next() method advanced the cursor to the next row 
+                - getXXXX(int columnnumner) methods are used to read the data given column number / column name 
 
+                .next()
 
-
-
+        
+        --->            '101','Mitul','Mumbai','2000'
+                        '102','Bhakti','Mumbai','1500'
+                        '103','Mohit','Pune','2100'
+                        '104','Saurabh','Pune','3100'
+                        '105','Vishal','Pune','2300'
 
 
 

@@ -1,3 +1,15 @@
 <div class="our-courses">
     <h1>Our Courses...</h1>
+    <hr />
+
+    <div *ngFor="let course of ourCourses" class="card" style="width: 18rem;display:inline-block; margin:5px">
+        <img src="/assets/zycus-logo1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ course.courseName }} </h5>
+            <p class="card-text"> {{ course .duration }}</p>
+            <a href="#" class="btn btn-primary">Enroll</a>
+        </div>
+    </div>
+
+
 </div>

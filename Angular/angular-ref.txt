@@ -1,0 +1,290 @@
+
+
+Language                    library                             framework 
+
+Java                        standard library                    Spring 
+                            i.e. collection, util, io       
+                            GSON, Jackson, etc.
+
+C#/VB                         .....                             .net 
+
+JavaScript                  jquery, bootstrap, semanticUI       Angular 
+                            reactjs, vuejs, etc.
+
+Python 
+
+  |                                 |                           |
+Programming                 simplify the tasks              standardize process 
+capabilities 
+
+
+FrontEnd web applications 
+
+    - HTML 
+        - "what" contents you want to place on the web page 
+        - "define the structure" of web pages 
+
+    - CSS  - cascading style sheet 
+        - "how" content should appear on the webpage 
+        - "define style rules" for the webpages   
+
+    - JavaScript 
+        - provide programming functionalities on webpages 
+        - javascript code executes only inside the browser 
+                - every browser has a javascript engine which executes js code 
+        - introduced in 1997
+        - 1997, it was submitted to ECMA for standardization
+        - sine then, ECMA keeps publishing diff specifications called
+        - and these specifications are implemented by diff browsers 
+                - this implementation is called as 'ECMAScript' 
+        - 1997      - ES1
+        - 1998      - ES2
+        - 1999      - ES3
+        - 2009      - ES5
+        - 2015      - ES6
+    
+        - using javacript 
+            - DOM Manipulation 
+            - CSS Manipulation 
+            - Calculation/ business logic 
+            - event handling 
+            - form validations 
+            - ajax calls 
+
+    - ES6 / ECMAScript 2015 / Advanced JavaScript 
+            - this specification introduced a lot of features in javascript 
+                - Arrow functions, spread operators, async and await, generators, classes and objects, 
+                - Module System 
+
+    - JQuery 
+        - it is javasript library, which simplify some tasks 
+
+    - Bootstrap 
+        - provides lot of css classes to create beautiful and responsive web pages 
+        - html5+css3+jquery
+
+
+
+
+
+
+Others 
+    - ReactJS (library)
+    - VueJS (library)
+    - EmberJS (Framework)
+
+Pre-requisites 
+
+    - JavaScript 
+        - it is an interpreted language 
+        - it is executed by javascript engine inside the browser
+        - it is not type safe 
+
+
+    - TypeScript 
+        - it is developed and maintained by microsoft 
+        - it is a superset of javascript/ES6 
+        - it has all the features of ES6 + some additional features i.e types, decorators, generics etc. 
+        - it is a compiled language i.e. TS code is compiled into JS code (es6)
+        - it cannot be executed in the browser
+
+
+        - hello.ts --------> hello.js 
+
+
+
+What is Angular 
+    - framework
+        - contains modules / libraries 
+    - it is managed & maintained by google 
+
+Environment Setup for Angular 
+---------------------------------
+
+    1. nodejs 12.x 
+        - nodejs comes with a depedency management tools called 'npm'
+
+    2. Editor
+            - VS Code 
+            - Intellij Idea 
+            - Atom 
+            - any editor  
+
+    3. angular-cli 
+            - command line tool to create/manage angular projects 
+            - npm install -g @angular/cli
+
+            > ng --version 
+
+
+Helloworld angular app 
+---------------------------
+    > ng new <<nameofapp>>
+
+
+Angular Framework
+---------------------
+        @angular/core
+        @angular/forms 
+        @angular/common 
+        @angular/animations
+        @angular/platform-browser
+        @angular/....
+
+
+
+Angular Building Blocks 
+--------------------------
+    1. Component 
+            - this is the most imp building block 
+            - Angular applications are made up of Components 
+            - component is used to render a 'view' on the page 
+            - Component is a typescript class which encapsulates data, view and logic together 
+            --** every angular applicatio has at least one Component, usually called as "AppComponent" 
+
+                        app.component.ts 
+                        app.component.html 
+
+
+
+
+                header.component.ts 
+                ======================                
+
+                    import {Component} from '@angular/core'
+
+                    @Component({
+                        selector : 'app-header',
+                        templateUrl : 'header-component.html'
+                    })
+                    class HeaderComponent {
+                        //data / fields 
+
+                        //methods / logic 
+                    }
+
+                header.component.html
+                =======================
+                    <div>
+                        <p> this is header component </p>
+                    </div>
+
+
+                <app-header> </app-header>      //component is loaded 
+
+
+                -------------------------------------------------------------------------------------------------------------------
+                product.component.ts 
+                ======================                
+
+                    import {Component} from '@angular/core'
+
+                    @Component({
+                        selector : 'app-product',
+                        templateUrl : 'product-component.html'
+                    })
+                    class ProductComponent {
+                        //data / fields 
+
+                        //methods / logic 
+                    }
+
+                product.component.html
+                =======================
+                    <div>
+                        <p> this is product component </p>
+                    </div>
+
+
+    2. Template 
+        - template is the 'view' which is rendered/controlled by component
+        - it is made using html  
+
+
+    3. Module 
+    ---------------
+            - it is a container to describe/register metadata and  the entities of the applications 
+                    i.e. components, directives, services, pipes, etc. etc. 
+            - module is also a typescript class 
+            -** every angular application has at least one module .. usually called as "AppModule"
+
+            import {NgModule} from '@angular/core'
+
+
+            @NgModule({
+                declarations : [...declare/regiser all components, directives and pipes ]
+                imports:[...declare/import all the submodules/othermodules]
+                providers : [..declare the services ],
+                bootstrap: [...specify which component to bootstrap when the app starts]
+            })
+            class AppModule{
+
+            }
+
+    Angular app directory structure 
+    --------------------------------------
+
+
+            Angular project 
+                |
+                |-->e2e 
+                |   |-> contains end-to-end test cases 
+                |
+                |-->node_modules
+                |   |-> contains all the dependencies 
+                |
+                |-->src 
+                |   |
+                |   |-->app
+                |   |   |->stores your root module, and component i.e. AppComponent 
+                |   |   |->app.component.ts 
+                |   |   |->app.component.html
+                |   |   |->app.module.ts
+                |
+                |   |-->assets
+                |   |
+                |   |
+                |   |-->environments
+                |   |
+                |   |
+                |   |-->index.html
+                |   |
+                |   |
+                |   |-->main.ts
+                |   |
+                |   |
+                |   |-->styles.css
+                |   |
+                |
+                |
+                |
+                |
+                |
+                |-->angular.json
+                |      |-> contains angular application related configuration 
+                |
+                |-->package.json
+                |       |-> lists the dependencies 
+                |       |-> configure some scripts to build, start, the app 
+                |
+                |->tsconfig.json
+                |       |-> contains configuration related to typescript 
+                |
+                |->tslint.json
+                |       |-> define rules for syntax
+                |
+
+        Create a new component 
+        ------------------------
+           >  ng generate component Header
+
+           or 
+
+           > ng g c Header 
+
+        
+        databinding 
+        -------------------
+            - communication between component and template 
+
+            

@@ -1439,7 +1439,8 @@ Queue<E> interface
 
 
                         2. PreparedStatement object 
-
+                                - represens pre-compiled and parameterized query 
+                                
                              PreparedStatement stmt = conn.preapreStatement(sql);
 
                         3. CallableStatement object 

@@ -14,13 +14,11 @@ export class CoursesListComponent implements OnInit {
   constructor() {
 
       this.ourCourses = [
-         new Course(1,  'Angular', '5 days', 'Vishal'),
-         new Course(2,  'React', '5 days', 'Vishal'),
-         new Course(3,  'Java', '7 days', 'Vishal'),
-         new Course(4,  'Spring', '2 days', 'Vishal'),
-         new Course(5,  'Hibernate', '6 days', 'Vishal'),
-        ]
-
+          new Course(1, "Angular", "5 Days", "Vishal"),
+          new Course(2, "React", "7 Days", "Vishal"),
+          new Course(3, "Java", "15 Days", "Vishal"),
+      ]
+     
    }
 
   ngOnInit(): void {

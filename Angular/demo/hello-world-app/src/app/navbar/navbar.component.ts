@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  isActive: boolean = true;
+
+  mybuttonStyle: string = 'btn btn-success active'
+
+  constructor() { 
+
+      setTimeout(() => {
+        //this.isActive = false;
+        this.mybuttonStyle = "btn btn-warning"
+      }, 7000);
+
+  }
 
   ngOnInit(): void {
   }

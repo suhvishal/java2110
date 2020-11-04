@@ -475,10 +475,10 @@ Angular Building Blocks
                                 - well testable 
 
 
-                        RegisterUserComponent 
+                       
+                        new FormControl(formState: any = null, 
+                                        validatorOrOpts?: ValidatorFn | AbstractControlOptions | ValidatorFn[], 
+                                        asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[])
 
-                                username 
 
-                                password 
-
-                                name 
+                        new FormControl('', [Validators.required, Validators.minlenght(6)])

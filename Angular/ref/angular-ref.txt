@@ -473,3 +473,12 @@ Angular Building Blocks
                                 - FormGroup, FormControl and other objects are created explicitely using some code in the component 
                                 - good complex forms with custom validation 
                                 - well testable 
+
+
+                        RegisterUserComponent 
+
+                                username 
+
+                                password 
+
+                                name 

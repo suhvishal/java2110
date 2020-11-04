@@ -222,6 +222,16 @@ Angular Building Blocks
 
             }
 
+
+        4. Directives 
+                - used to enhance the view 
+
+
+        5. Pipes 
+
+        6. Services 
+
+
     Angular app directory structure 
     --------------------------------------
 
@@ -360,13 +370,24 @@ Angular Building Blocks
                          - repeat elements 
 
                 - *ngIf
-                - *ngFor
+                ---------
+                    <div *ngIf="boolean-expression;else errMessage">
+                            This div tag is visible if only the condition true 
+                    </div>
 
-                <element>
-                    //content 
-                    //...
-                    //..
-                </element> 
+                    <ng-template #errMessage>
+                        <p>This is visible in else case</p>
+                    </ng-template>
+
+
+                - *ngFor
+                ------------
+
+                        someArray = [item1, item2, item3, item4, item5,....]
+
+                        <element *ngFor="let value of someArray">
+                                //some content 
+                        </element>
 
         - component directive 
             - to render a view on the page 
@@ -378,7 +399,77 @@ Angular Building Blocks
         Custom attribute directive 
         -------------------------------
 
+                - class that obtains the reference of the host element and enhanecs the element 
+
+                <h1 highlight> ....... </h1>
+
+
+                import {ElementRef} from '@angular/core';
+
+                @Directive({
+                    selector: '[highlight]'
+                })
+                class HighLightDirective {
+
+                        constructor(private eleRef: ElementRef){
+
+                        }
+
+                }
+
 
 
         custom structural directive 
         ---------------------------
+
+
+
+        Working with forms
+        ----------------------
+
+                - angular has a library called @angular/forms to help you handling forms 
+                - this library has few modules 
+                            FormsModule     
+                            ReactiveFormsModule
+                    - both the modules contains some predefined directives, services, classes etc.
+                - the @angular/forms library provides some useful classes/objects to handle the forms 
+                    i.e. FormGroup object 
+                                - used to track and validate group of FormControl objects 
+                                - it has below properties 
+                                        - valid 
+                                        - value 
+                                        - errors 
+                                        - touched 
+                                        - dirty 
+                                        -.... 
+                         FormControl object  
+                                - used to track and validate value of an individual form element 
+                                            i.e. textfield, textbox, checkbox, radio button etc.
+                                - it has below properties 
+                                        - valid 
+                                        - value 
+                                        - errors 
+                                        - touched 
+                                        - dirty 
+                                        -.... 
+
+                There are two approaches to handle the forms 
+
+                        1. Template driven forms 
+                                - FormGroup, FormControl and some other objects are created automatically/implicitely 
+                                    just by adding some directive in the template 
+
+                                - good for simple forms with basic validation 
+                                - easy to create 
+
+                                - ie. 
+                                    <form> </form>
+
+                                    <form ngFrom> </form>
+
+                                    <form #myForm="ngForm"> </form>
+
+                        2. Reactive form
+                                - FormGroup, FormControl and other objects are created explicitely using some code in the component 
+                                - good complex forms with custom validation 
+                                - well testable 

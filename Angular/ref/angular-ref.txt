@@ -317,4 +317,68 @@ Angular Building Blocks
                     binding value of a field to the class attribute 
 
                     <element class="CSS-class" />
-    
+
+                    a. single class binding 
+
+                        <h1 [class.heading]="isActive"> This is Navbar </h1>
+
+            5. custom data binding 
+            -----------------------
+                    - passing data to child component 
+                    - using @Input() 
+
+            6. custom event binding 
+
+                    - to emit custom events 
+                    - pass data from child to parent using custom event 
+
+
+    Directives 
+    ----------------- 
+        - attribute directive 
+                - to enhance the view 
+                - modify the behavior of html elements, attributes, or properties and components 
+
+                [ngClass]
+                        - to add / remove css class/es dynamically
+
+                [ngStyle]
+                        - to add /remove css styles to html elements 
+
+                [ngModel]
+                        - bind a value of a field to a form element and vice versa 
+
+
+                <element [attributeDirective]="value">
+
+                <element [ngClass]="fieldName"> 
+
+        - structural directive 
+                - to make changes in the structure of dom 
+                - DOM manipulation
+                    i.e. - hide/show view elements 
+                         - repeat elements 
+
+                - *ngIf
+                - *ngFor
+
+                <element>
+                    //content 
+                    //...
+                    //..
+                </element> 
+
+        - component directive 
+            - to render a view on the page 
+                <app-header>
+                <app-productlist>
+                <app-navbar>
+
+
+        Custom attribute directive 
+        -------------------------------
+
+
+
+        custom structural directive 
+        ---------------------------

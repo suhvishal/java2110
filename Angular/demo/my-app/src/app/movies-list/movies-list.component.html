@@ -25,12 +25,12 @@
             <td>{{ movie.numberInStock }}</td>
             <td>{{ movie.dailyRentalRate }}</td>
             <td>
-                <button class="btn btn-info">
+                <button class="btn btn-info" (click)="updateMovie(movie)">
                     Update
                 </button>
             </td>
             <td>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" (click)="deleteMovie(movie._id)">
                     Remove
                 </button>
             </td>

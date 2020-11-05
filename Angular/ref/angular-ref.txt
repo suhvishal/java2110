@@ -482,3 +482,32 @@ Angular Building Blocks
 
 
                         new FormControl('', [Validators.required, Validators.minlenght(6)])
+
+
+
+                Vidly-api-node
+                --------------------        
+                    - this is a backend application (REST application) created using nodejs 
+                    - this application exposes some REST api endpoints 
+                    - this application mongo db 
+
+                            GET     http://localhost:3000/api/movies       
+                                         -- return all the movies from the database 
+
+                            GET     http://localhost:3000/api/movies/xxxxxxxx<movieid>
+                                        -- returns the movie based on given id 
+
+                            POST    http://localhost:3000/api/movies
+                                        -- adds a new movie in db 
+
+                            PUT     http://localhost:3000/api/movies/XXXX<movieid>
+                                        -- update the given movie 
+
+                            DELETE  http://localhost:3000/api/movies/XXXX<movieid>
+                                        -- deletes the given movie 
+
+
+
+
+            http 
+            --------

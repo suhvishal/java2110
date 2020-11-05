@@ -1,5 +1,10 @@
 <div>
     <h2>Movie List </h2>
+
+    <button class="btn btn-primary" (click)="createMovie()">
+        Add Movie
+    </button>
+
     <hr />
 
     <table class="table table-light">
@@ -19,8 +24,16 @@
             <td>{{ movie.genre.name }}</td>
             <td>{{ movie.numberInStock }}</td>
             <td>{{ movie.dailyRentalRate }}</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>
+                <button class="btn btn-info">
+                    Update
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-danger">
+                    Remove
+                </button>
+            </td>
         </tr>
 
     </table>

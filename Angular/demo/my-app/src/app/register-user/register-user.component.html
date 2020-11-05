@@ -7,15 +7,15 @@
         <input type="text" 
             class="form-control"
             id="username"
-            formControlName="username">
+            formControlName="email">
 
-        <div *ngIf="!username.valid && username.touched">
+        <div *ngIf="!email.valid && email.touched">
             
-            <div  *ngIf="username.errors.required" class="alert alert-danger">
+            <div  *ngIf="email.errors.required" class="alert alert-danger">
                 Username is required...
             </div>
 
-            <div  *ngIf="username.errors.minlength"  class="alert alert-danger">
+            <div  *ngIf="email.errors.minlength"  class="alert alert-danger">
                 min {{ username.errors.minlength.requiredLength }} characters are required...
             </div>
 

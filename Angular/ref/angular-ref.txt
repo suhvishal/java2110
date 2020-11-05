@@ -230,6 +230,8 @@ Angular Building Blocks
         5. Pipes 
 
         6. Services 
+                - a class used to write the business logic 
+                - you can use pre-defined services as well as can create own services also 
 
 
     Angular app directory structure 
@@ -529,7 +531,21 @@ Angular Building Blocks
                                             }   
 
 
+            Service 
+            ---------
+                - Service can be injected into components via constructors 
+
             HttpClientModule 
             -----------------
                     - @angular/common/http package 
                     - using this module we can make ajax calls / http requests to a backend 
+
+                    - this module provides a service called as HttpClient
+
+
+            Observable 
+            -------------
+                - observable is an object used to handle asynchronus operations 
+                - the rxjs library provides observable object and many operators we can use while handling asyc operations 
+
+                

@@ -9,11 +9,11 @@ import { MyValidators } from '../customvalidators/customvalidators.ts/customvali
 })
 export class RegisterUserComponent implements OnInit {
 
-  private userForm: FormGroup;
+  public userForm: FormGroup;
 
 
-  public get username() {
-    return this.userForm.get('username')
+  public get email() {
+    return this.userForm.get('email')
   }
 
   public get password() {
@@ -23,7 +23,7 @@ export class RegisterUserComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
 
     this.userForm = formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.minLength(6)]],
       password: ['', [Validators.required, MyValidators.shouldNotContainSpaces]],
       name: ['', Validators.required]
     })
@@ -41,7 +41,7 @@ export class RegisterUserComponent implements OnInit {
 
   handleSubmit() {
     console.log('form submitted...')
-    console.log(this.userForm)
+    console.log(this.userForm.value)
   }
 
   ngOnInit(): void {

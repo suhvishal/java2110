@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   handleLogin(loginForm:NgForm){
     // console.log('you clicked on login button...')
-     console.log(loginForm)
+     console.log(loginForm.value)
     //console.log(loginForm.value)
   }
 

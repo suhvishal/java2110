@@ -1,0 +1,27 @@
+<div>
+    <h2>Movie List </h2>
+    <hr />
+
+    <table class="table table-light">
+        <thead class="table-dark">
+            <tr>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Stock</th>
+                <th>Rate</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+
+        <tr *ngFor="let movie of moviesList">
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.genre.name }}</td>
+            <td>{{ movie.numberInStock }}</td>
+            <td>{{ movie.dailyRentalRate }}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+    </table>
+</div>

@@ -4,16 +4,21 @@
 
     <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control" id="username" #uname="ngModel" ngModel name="username" required
+        <input type="text" class="form-control" 
+                id="username" 
+                #email="ngModel" 
+                ngModel 
+                name="email" 
+                required
             minlength="6">
 
-        <div *ngIf="uname.touched && !uname.valid">
-            <div *ngIf="uname.errors.required" class="alert alert-danger">
+        <div *ngIf="email.touched && !email.valid">
+            <div *ngIf="email.errors.required" class="alert alert-danger">
                 Username is required...
             </div>
 
-            <div *ngIf="uname.errors.minlength" class="alert alert-danger">
-                Username must have at least {{ uname.errors.minlength.requiredLength }} characters
+            <div *ngIf="email.errors.minlength" class="alert alert-danger">
+                Username must have at least {{ email.errors.minlength.requiredLength }} characters
             </div>
         </div>
 

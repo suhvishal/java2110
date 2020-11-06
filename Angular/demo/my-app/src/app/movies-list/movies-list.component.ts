@@ -12,6 +12,8 @@ import { MovieService } from '../services/movie-service.service';
 export class MoviesListComponent implements OnInit {
 
   public moviesList: any[];
+  public errMessage: string;
+  public hasError:boolean = false;
 
   constructor(private movieService: MovieService) {
 
@@ -19,15 +21,16 @@ export class MoviesListComponent implements OnInit {
 
   createMovie() {
     //create movie object manually and send it to server 
-    const movie = { title: "new movie", dailyRentalRate: 3, numberInStock: 2, genreId: '5fa3c9b5f741cd1ba6d13038' }
+    const movie = { title: "new movie", numberInStock: 2, genreId: '5fa3c9b5f741cd1ba6d13038' }
     this.movieService.saveMovie(movie)
       .subscribe(
         (movie: Movie) => {
           //console.log('movie added to db;', movie)
           this.moviesList.unshift(movie);
         },
-        (error) => {
-          console.log(error)
+        (error:string) => {
+          this.hasError = true;
+          this.errMessage = error;
         }
       )
   }
@@ -37,9 +40,11 @@ export class MoviesListComponent implements OnInit {
       .subscribe(
         (moviesData: Movie[]) => {
           this.moviesList = moviesData;
+          this.hasError = false;
         },
-        (error: HttpErrorResponse) => {
-          console.log(error)
+        (error:string) => {
+          this.hasError = true;
+          this.errMessage = error;
         }
       )
   }
@@ -56,8 +61,9 @@ export class MoviesListComponent implements OnInit {
           let index = this.moviesList.indexOf(movie);
           this.moviesList[index] = updatedMovie;
         },
-        (error) => {
-          console.log(error)
+        (error:string) => {
+          this.hasError = true;
+          this.errMessage = error;
         }
       )
 
@@ -73,9 +79,11 @@ export class MoviesListComponent implements OnInit {
           let m = this.moviesList.find((item) => item._id == id)
           let index = this.moviesList.indexOf(m)
           this.moviesList.splice(index, 1);
+          this.hasError = false;
         },
-        (error) => {
-          console.log(error)
+        (error:string) => {
+          this.hasError = true;
+          this.errMessage = error;
         }
       )
 

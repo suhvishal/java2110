@@ -7,6 +7,10 @@
 
     <hr />
 
+    <div *ngIf="hasError">
+        <p> {{ errMessage }} </p>
+    </div>
+
     <table class="table table-light">
         <thead class="table-dark">
             <tr>

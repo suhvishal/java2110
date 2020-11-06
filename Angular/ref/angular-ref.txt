@@ -549,3 +549,21 @@ Angular Building Blocks
                 - the rxjs library provides observable object and many operators we can use while handling asyc operations 
 
                 
+            Error handling 
+                1. expected 
+                        - client error 
+                        - supplied wrong info 
+                        - authentication/authorization error 
+                        - user error 
+
+                        -- show appropriate message to the user 
+
+                2. unexpected 
+                        - server is not working 
+                        - db is not working 
+                        - network error 
+                        - bug in backend app 
+                        - physical failures 
+
+                        -- show some generic message 
+                        -- log the error using logger system i.e. sentry

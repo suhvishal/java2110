@@ -14,7 +14,6 @@ export class MovieService {
 
   constructor(private httpClient: HttpClient) { }
 
-
   public getAllMovies(): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(this.url).pipe(
       catchError(this.handleError)
@@ -33,6 +32,9 @@ export class MovieService {
     //console.log(movie)
     //post 
     if (!movie._id) {
+
+      
+
       return this.httpClient.post<Movie>(this.url, movie).pipe(
         catchError(this.handleError)
       )

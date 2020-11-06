@@ -567,3 +567,37 @@ Angular Building Blocks
 
                         -- show some generic message 
                         -- log the error using logger system i.e. sentry
+
+
+
+                        http.get<?>(url)
+                                .pipe(
+                                    retry(),
+                                    map(),
+                                    catchError()
+                                )
+
+
+
+
+
+                        /               - HomeComponent 
+
+                        /login          - LoginComponent 
+
+                        /register       - RegisterComponent 
+
+                        /movies         - MoviesListComponent 
+
+
+                Routing 
+                -------------
+
+                    1. configure the routes 
+
+                            const appRoutes:Routes = [
+                                {path: '/', component : HomeComponent  },
+                                {path: '/login', component : LoginComponent  },
+                                {path: '/register', component : RegisterComponent  },
+                                {path: '/movies', component : MoviesListComponent  },
+                            ]

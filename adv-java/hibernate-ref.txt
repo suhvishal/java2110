@@ -1,0 +1,128 @@
+JDBC 
+-----------
+    - too many sql statements
+    - complex sql statements
+    - 
+
+
+java object model 
+------------------------
+
+
+
+database relational model
+----------------------------
+
+
+hibernate 
+----------
+    - ORM (object relational mapping) TOOL 
+    - to map java classes to database tables 
+    - you can perform the CRUD operations without sql 
+    - hibernate provides HQL - hibernate query language, which represents object oriented query
+    
+other ORM tools 
+-----------------
+    - toplink 
+    - ibatis 
+    - ...
+    - ...
+
+JPA 
+--------
+    - java persistent api 
+    - it is specification / standard that every ORM tool is supposed to follow 
+
+
+hibernate jpa 
+---------------
+    - hibernate implementation of JPA 
+    - the configuration related to db can be made external using an xml file
+        - hibernate.cfg.xml
+
+Entity 
+---------------
+    - an object which is managed by hibernate-jpa is called as Entity 
+    - managed object 
+    - Entity class is mapped with the database table 
+
+    - Entity class 
+            - must have a no-arg constructor 
+            - getter/setter methods for  the members 
+            - must be annotated with @Entity annotation 
+            - must have an identifier column marked using @Id annotation 
+
+
+Session Factory 
+------------------
+    - SessionFactory loads the hibernate configuration (hibernate.cfg.xml file)
+            - it analyzes the mapping and creates connection to the db 
+
+    - Session factory is used to create 'Session' object 
+    - 'Session' object is  used to manged entities 
+            - 'Session' object is obtained only using SessionFactory object 
+
+1. create maven project 
+2. add dependencies 
+        - hibernate-core 
+        - mysql-connector 
+3. create the Entity class 
+        - Employee 
+
+
+            @Entity
+            public class Employee {
+
+                @Id
+                private Long id;
+                
+                private String eName;
+                private String city;
+                private double salary;
+
+                //constructor
+                //getter/setters
+            }
+4. create hibernate configuration file in src/java/resources folder 
+
+        - hibernate.cfg.xml 
+
+        <?xml version = "1.0" encoding = "utf-8"?>
+        <!DOCTYPE hibernate-configuration SYSTEM 
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+        <hibernate-configuration>
+            <session-factory>
+                <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+                <property name="connection.url">jdbc:mysql://localhost:3306/mydb</property>
+                <property name="connection.username">root</property>
+                <property name="connection.password">suhroot123</property>
+                <mapping class="com.zycus.entities.Employee"/>
+            </session-factory>
+        </hibernate-configuration>
+
+5. persist the entities using SessionFactory 
+
+
+    Entities 
+    -----------
+
+
+    Default Entity Mapping 
+    ---------------------
+        - the table name in the db will be same as Entity class name 
+        - all the fields of the entity class will be mapped to table columns as per default mapping 
+
+    custom mapping 
+
+
+    Entity Relationship 
+
+    Entity Inheritance 
+
+    Quering the entities
+    ------------------------
+            - HQL 
+            - JPQL 
+            - query method (Spring data jpa)
+            - querydsl (3rd party library)

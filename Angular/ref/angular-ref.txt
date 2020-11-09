@@ -601,3 +601,13 @@ Angular Building Blocks
                                 {path: '/register', component : RegisterComponent  },
                                 {path: '/movies', component : MoviesListComponent  },
                             ]
+
+                            imports : [
+                                RouterModule.forRoot(appRoutes)
+                            ]
+
+                    2. define the place where the component should be loaded dynamically based on the changes in the url 
+
+                            <router-outlet></router-outlet>
+
+

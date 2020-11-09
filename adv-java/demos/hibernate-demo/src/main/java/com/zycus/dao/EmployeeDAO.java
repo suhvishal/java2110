@@ -10,11 +10,10 @@ public class EmployeeDAO {
 
 	private SessionFactory sessionFactory;
 
-	
 	public EmployeeDAO() {
 		Configuration cfg = new Configuration();
-        cfg.configure("hibernate.cfg.xml");
-        this.sessionFactory =  cfg.buildSessionFactory();
+		cfg.configure("hibernate.cfg.xml");
+		this.sessionFactory = cfg.buildSessionFactory();
 	}
 
 	private void close() {
@@ -22,16 +21,43 @@ public class EmployeeDAO {
 	}
 
 	public void saveEmployee(Employee emp) {
-		
-		Session session =  sessionFactory.openSession();
-		
+
+		Session session = sessionFactory.openSession();
+
 		session.beginTransaction();
 		session.save(emp);
 		session.getTransaction().commit();
-		
-		
-
 	}
 
-	
+	public Employee getEmployee(Long id) {
+
+		Employee e = null;
+
+		Session session = sessionFactory.openSession();
+		e = session.find(Employee.class, id);
+
+		return e;
+	}
+
+	public void updateEmployee(Employee emp) {
+
+		Session session = sessionFactory.openSession();
+
+		session.beginTransaction();
+
+		session.update(emp);
+
+		session.getTransaction().commit();
+	}
+
+	public void deleteEmployee(Employee emp) {
+		Session session = sessionFactory.openSession();
+
+		session.beginTransaction();
+
+		session.delete(emp);
+
+		session.getTransaction().commit();
+	}
+
 }

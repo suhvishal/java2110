@@ -20,7 +20,8 @@ hibernate
     - to map java classes to database tables 
     - you can perform the CRUD operations without sql 
     - hibernate provides HQL - hibernate query language, which represents object oriented query
-    
+    - hibernate.cfg.xml file to configure db related properties 
+
 other ORM tools 
 -----------------
     - toplink 
@@ -33,12 +34,19 @@ JPA
     - java persistent api 
     - it is specification / standard that every ORM tool is supposed to follow 
 
+JPA provider
+----------------
+    - ORM tool which implements jpa standards 
+    - hibernate jpa 
+    - eclipselink
+    - mybatis 
 
 hibernate jpa 
 ---------------
     - hibernate implementation of JPA 
     - the configuration related to db can be made external using an xml file
-        - hibernate.cfg.xml
+        - persistence.xml
+
 
 Entity 
 ---------------
@@ -53,7 +61,7 @@ Entity
             - must have an identifier column marked using @Id annotation 
 
 
-Session Factory 
+Session Factory (hibernate)
 ------------------
     - SessionFactory loads the hibernate configuration (hibernate.cfg.xml file)
             - it analyzes the mapping and creates connection to the db 
@@ -108,13 +116,28 @@ Session Factory
     -----------
 
 
+
+    Hibernate Jpa 
+    ----------------
+        - EnitityManagerFactory
+                - loads the configuration from persistence.xml file 
+                - we can object an object of EntityManager using EnitityManagerFactory
+
+
+                EnitityManagerFactory factory = Persistence.createEntityManagerFactory("punit-name");
+                EntityManager em = factory.createEntityManager() 
+
+
+        - EntityManager
+                - object, which manages the entities / persists the entities 
+
+
     Default Entity Mapping 
     ---------------------
         - the table name in the db will be same as Entity class name 
         - all the fields of the entity class will be mapped to table columns as per default mapping 
 
-    custom mapping 
-
+    Custom mapping 
 
     Entity Relationship 
 

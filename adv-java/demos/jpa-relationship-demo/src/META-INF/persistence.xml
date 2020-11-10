@@ -11,15 +11,16 @@
 		<class>com.zycus.entities.Book</class>
 		<class>com.zycus.entities.CD</class>
 		<class>com.zycus.entities.Item</class>
+		<class>com.zycus.entities.Author</class>
 
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"
-				value="drop-and-create" />
+				value="update" />
 
 			<property
 				name="javax.persistence.schema-generation.scripts.action"
-				value="drop-and-create" />
+				value="update" />
 			<property
 				name="javax.persistence.schema-generation.scripts.create-target"
 				value="module04-create.ddl" />

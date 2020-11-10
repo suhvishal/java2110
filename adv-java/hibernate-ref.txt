@@ -148,17 +148,65 @@ Session Factory (hibernate)
 
 
 
-
-
-
-
     Entity Relationship 
+    ---------------------
+        - ENTITY class can have association with other class 
+        - in java the relationship is represented using 'association'
+        - in rdbms the relationship is represented using referential integrity 
+
+        class Book {
+            id;
+            title;
+            noOfPage;
+            
+            Author author;          //association
+
+        }
+
+        class Author {
+            id;
+            name;
+            age;
+
+            Set<Book> books;
+        }
+
+
+        Book ------has one-----------> Author 
+        OneToOne
+
+
+        Author ---- has many -------> books
+        OneToMany 
+
+
+            OneToOne            JoinColumn 
+            ManyToOne           JoinColumn 
+
+
+            OneToMany           JoinTable       
+            ManyToMany          JoinTable  
+
 
     Entity Inheritance 
 
     Quering the entities
     ------------------------
-            - HQL 
-            - JPQL 
+            - 1. HQL 
+            -------------
+
+
+            - 2. JPQL 
+            ------------
+                SQL:        SELECT * FROM Author 
+
+
+                JPQL:       SELECT a              
+                            FROM                 
+                            Author a            
+
+            - named queries 
+            - criteria query 
+            
             - query method (Spring data jpa)
             - querydsl (3rd party library)

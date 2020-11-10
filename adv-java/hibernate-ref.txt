@@ -136,8 +136,21 @@ Session Factory (hibernate)
     ---------------------
         - the table name in the db will be same as Entity class name 
         - all the fields of the entity class will be mapped to table columns as per default mapping 
+        - by default all the attributes/fields of the entity are persisted 
+
+                String          ==> VARCHAR(255)
 
     Custom mapping 
+    ------------------
+            @Table(name="t_author")
+            @Column(name="somename")
+            @Transient
+
+
+
+
+
+
 
     Entity Relationship 
 

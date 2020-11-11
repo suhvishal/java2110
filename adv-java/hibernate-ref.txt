@@ -324,3 +324,24 @@ Session Factory (hibernate)
                         <property>
 
                         </property>
+
+            3. Post Initialization & pre destroy 
+            --------------------------------------------        
+                    - sometimes we want to intialize resources / and after initialization we want to perform some validation
+                    - provide post-initialization method and pre-destroy method in bean life cycle 
+
+                    1. by implementing InitializationBean & DisposableBean interface 
+
+                    2. @PostConstruct and @PreDestroy 
+
+            4. Bean Scopes 
+            --------------------
+                    1. singleton 
+
+                    2. prototype 
+
+                    3. request 
+
+                    4. session 
+
+                    5. application 

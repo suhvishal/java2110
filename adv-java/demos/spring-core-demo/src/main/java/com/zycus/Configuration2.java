@@ -1,6 +1,7 @@
 package com.zycus;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 
 import com.zycus.bo.Employee;
 

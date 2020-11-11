@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.zycus.dao.EmployeeDAO;
 
-@Component
+//@Component
 public class EmployeeService {
 	
 	@Autowired

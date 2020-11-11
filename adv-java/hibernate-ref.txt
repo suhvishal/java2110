@@ -210,3 +210,97 @@ Session Factory (hibernate)
             
             - query method (Spring data jpa)
             - querydsl (3rd party library)
+
+    -----------------------------------------------------------------
+
+
+    Spring Framework / Spring 
+    -----------------------------------
+
+        - spring makes your applications light weight and loosely coupled 
+        - spring is powerful, mature, highly flexible framework 
+
+        - decouples the execution of tasks from its implementation
+        - makes it easier to switch between diff implementation
+        - greater modularity of a program 
+        - 
+
+
+        - Spring Core 
+                - IOC Container 
+                - depedency injection 
+                - Bean Definition 
+                - data binding 
+                - validation etc. 
+
+        - Spring MVC 
+        - Spring data
+        - Spring Data Rest
+        - Spring Boot 
+
+        - Spring Security 
+        - Spring Cloud 
+        - .....
+
+
+
+        IOC - Inversion of control 
+        ------------------------------
+                - java applications are made up of several 'objects'
+                - delegates the responsibility of creating the objects to container 
+
+        Container
+        ----------------
+            - container is a class in spring, which is responsible to create objects based on some configuration 
+            - this configuration can be made external using xml, java or annotations 
+            - in spring, the container is represented by the interface 'ApplicationContext'
+
+            ApplicationContext (interface)
+                    |
+                    |-> ClassPathXmlApplicationContext 
+                    |-> AnnotationConfigApplicationContext 
+            -------------------------------------------------------------------------------------
+            WebApplicationContext (interface)                               ConfigurableApplicationContext (interface)
+                    |
+                    |-> AnnotationConfigWebApplicationContext
+
+        Dependency Injection 
+        ------------------------
+                - injecting objects into another objects 
+
+
+
+        Spring Beans 
+        --------------
+            - the object which is managed by spring IOC container is called as 'spring bean' 
+            - a spring bean is an object that is instantiated / assembled / managed by IOC container 
+
+        Spring Bean Definitions
+        ----------------------------
+            - instructs the IOC container to manage the objects 
+
+                1. using xml 
+                        <beans>
+
+                            <bean id="employeeDAO" class="com.zycus.dao.EmployeeDAO"> 
+                                    //configuration for initialization
+                            </bean>
+                           
+                        </beans>
+
+                2. using java 
+
+                    public class MyConfiguration {
+	
+                            @Bean
+                            public EmployeeDAO getEmployeeDAO() {
+                                return new EmployeeDAO();
+                            }
+
+                    }
+
+                3. using annotations 
+                            @Component 
+                            @Service
+                            @Repository
+                            @Controller 

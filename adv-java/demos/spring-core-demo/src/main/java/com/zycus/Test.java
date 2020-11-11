@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.zycus.dao.EmployeeDAO;
+import com.zycus.services.EmployeeService;
 
 public class Test {
 
@@ -18,7 +19,12 @@ public class Test {
 		ApplicationContext context = new AnnotationConfigApplicationContext(MyConfiguration.class, Configuration2.class);
 		
 		EmployeeDAO employeeDAO = context.getBean(EmployeeDAO.class);
+		System.out.println(employeeDAO);
 		
+		EmployeeService employeeService = context.getBean(EmployeeService.class);
+		if(employeeService.getEmployeeDAO()!=null) {
+			System.out.println("autowired successful....");
+		}
 		
 	}
 

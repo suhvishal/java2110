@@ -304,3 +304,23 @@ Session Factory (hibernate)
                             @Service
                             @Repository
                             @Controller 
+
+
+            2. Bean initialization 
+            ------------------------------  
+                 - no-arg constructor -----> setter methods 
+                a. Constructor injection 
+
+                            <bean id="" class="">
+                                    <constructor-arg>
+                                            <value>xxxx</value>
+                                    </constructor-arg>
+
+                                    <constructor-arg value="xxxx" />
+
+                            </bean>   
+
+                b. setter injection 
+                        <property>
+
+                        </property>

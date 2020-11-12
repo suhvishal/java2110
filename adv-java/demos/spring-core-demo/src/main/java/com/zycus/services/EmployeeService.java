@@ -1,34 +1,31 @@
 package com.zycus.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.zycus.dao.EmployeeDAO;
+import com.zycus.dao.EmployeeRepository;
 
-//@Component
+@Component
 public class EmployeeService {
 	
 	@Autowired
-	private EmployeeDAO employeeDAO;
+	@Qualifier("jpa")
+	private EmployeeRepository empRepo;
 
 	public EmployeeService() {
 		System.out.println("EmployeeService object is created....");
 	}
 
-	public EmployeeService(EmployeeDAO employeeDAO) {
+	public EmployeeService(EmployeeRepository empRepo) {
 		super();
 		System.out.println("EmployeeService is created using parameterized constructor...");
-		this.employeeDAO = employeeDAO;
+		this.empRepo = empRepo;
 	}
 
-	public EmployeeDAO getEmployeeDAO() {
-		return employeeDAO;
-	}
+	 
 
-	public void setEmployeeDAO(EmployeeDAO employeeDAO) {
-		this.employeeDAO = employeeDAO;
-	}
-	
+	 
 	
 }

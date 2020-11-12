@@ -5,8 +5,8 @@ import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-//@Component
-public class EmployeeDAO {
+@Component("jdbc")
+public class EmployeeDAOJDBC implements EmployeeRepository {
 	
 	@Value("somedriverclassvalue")
 	private String driverClass;
@@ -20,11 +20,11 @@ public class EmployeeDAO {
 	@Value("somepass")
 	private String password;
 
-	public EmployeeDAO() {
-		System.out.println("EmployeeDAO object is created....");
+	public EmployeeDAOJDBC() {
+		System.out.println("EmployeeDAOJDBC object is created....");
 	}
 
-	public EmployeeDAO(String driverClass, String url, String username, String password) {
+	public EmployeeDAOJDBC(String driverClass, String url, String username, String password) {
 		super();
 		System.out.println("initializing values through parameterized constructor...");
 		this.driverClass = driverClass;

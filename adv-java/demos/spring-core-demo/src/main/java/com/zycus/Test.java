@@ -5,7 +5,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.zycus.bo.Employee;
-import com.zycus.dao.EmployeeDAO;
 import com.zycus.services.EmployeeService;
 
 public class Test {
@@ -20,13 +19,13 @@ public class Test {
 		ApplicationContext context = new AnnotationConfigApplicationContext(MyConfiguration.class);
 		
 		
-		Employee e1 = context.getBean(Employee.class);
-		
-		System.out.println(e1);
-		
-		Employee e2 = context.getBean(Employee.class);
-		
-		System.out.println(e2);
+//		Employee e1 = context.getBean(Employee.class);
+//		
+//		System.out.println(e1);
+//		
+//		Employee e2 = context.getBean(Employee.class);
+//		
+//		System.out.println(e2);
 		
 //		EmployeeDAO employeeDAO = context.getBean(EmployeeDAO.class);
 //		System.out.println(employeeDAO);

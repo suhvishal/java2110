@@ -7,16 +7,20 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.demo.model.Reward;
 
 
-
+@Component
 public class JdbcRewardRepositoryImpl implements RewardRepository {
+	
 	
 	private DataSource dataSource;
 	
 	
-
+	@Autowired
 	public JdbcRewardRepositoryImpl(DataSource dataSource) {
 		super();
 		this.dataSource = dataSource;

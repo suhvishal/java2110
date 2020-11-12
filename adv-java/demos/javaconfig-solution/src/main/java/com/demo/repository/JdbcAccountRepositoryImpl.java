@@ -9,16 +9,19 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.demo.model.*;
 
 
-
+@Component
 public class JdbcAccountRepositoryImpl implements AccountRepository {
 	
 	private DataSource dataSource;
 	
 	
-
+	@Autowired
 	public JdbcAccountRepositoryImpl(DataSource dataSource) {
 		super();
 		this.dataSource = dataSource;

@@ -1,0 +1,9 @@
+insert into employee (id, fname, lname, city, salary) values(10, 'Akash','Khandelia','Mumbai', 1000.00);
+insert into Employee (id, fname, lname, city, salary) values(11, 'Bhakti','Padawe','Mumbai', 2000.00);
+insert into Employee (id, fname, lname, city, salary) values(12, 'Deepak','jaiswar','Mumbai', 3000.00);
+insert into Employee (id, fname, lname, city, salary) values(13, 'Mitul','Gandhi','Pune', 200000);
+insert into Employee (id, fname, lname, city, salary) values(14, 'Saurabh','Sharma','Mumbai', 4000.00);
+insert into Employee (id, fname, lname, city, salary) values(15, 'Mohit','Singhvi','Pune', 1500.00);
+insert into Employee (id, fname, lname, city, salary) values(16, 'Vamshi','Ganga','Mumbai', 2500.00);
+insert into Employee (id, fname, lname, city, salary) values(17, 'Zahid','Khan','Pune', 3500.00);
+insert into Employee (id, fname, lname, city, salary) values(18, 'Vishal','Shah','Mumbai', 4500.00);

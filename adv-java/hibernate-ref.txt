@@ -345,3 +345,45 @@ Session Factory (hibernate)
                     4. session 
 
                     5. application 
+
+
+
+        JPA 
+            - specification / standard for ORM tools 
+
+        JPA Providers 
+            - ORM tools who implements JPA Standard / specification
+            - i.e Hibernate (JPA), eclipselink, mybatis etc. 
+
+        Spring Data JPA 
+            - abstraction over JPA 
+            - provider an extra layer with some boilerplate code to perform persistence operations 
+
+
+                    interface Repository<T, ID>
+                        |
+                        |--> this is marker interface, it has no methods 
+                        |
+                        |
+                    interface CrudRepository<T, ID>
+                        |
+                        |-> void delete(t entity)
+                        |-> void deleteAll()
+                        |-> long count()
+                        |-> Optional<T> findById(ID id)
+                        |-> Iterable<T> findAll()
+                        |-> <? extends T> save(T entity)
+                        |
+                        |
+                        |
+                        |
+                        |
+
+
+
+
+
+
+
+
+

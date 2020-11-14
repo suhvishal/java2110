@@ -234,9 +234,26 @@ Session Factory (hibernate)
                 - validation etc. 
 
         - Spring MVC 
+                - used to create web applications (server side web applications )
+                - supports diff view engines for UI/frontEnds
+                        i.e. jsp, thymeleaf, velocity, wicket, jade, etc. 
+                - also create web servies (REST webservices / XML webservices )
+
+                - WebServices 
+                    - it is a service / app / api which returns data in the form of xml 
+
+                - REST
+                     - it is a service / app / api which returns data in the form of json 
+ 
+            
         - Spring data
+                - jdbctemplate : abstraction over jdbc 
+                - spring data jpa : abstraction over jpa 
+
         - Spring Data Rest
         - Spring Boot 
+            - autoconfiguration 
+            - actuator 
 
         - Spring Security 
         - Spring Cloud 
@@ -375,15 +392,42 @@ Session Factory (hibernate)
                         |-> <? extends T> save(T entity)
                         |
                         |
+                    interface PagingAndSortingRepository<T, ID>
+                        |
+                        |-> Page<T> findAll(Pageable pageable)
+                        |-> Iterable<T> findAll(Sort sort)
                         |
                         |
+                    interface JpaRepository<T, ID>
                         |
+                        |-> saveAll(Iterable<T> list)
+                        |-> findAll(Example example)  
 
 
 
 
+interface EmployeeRepository extends PagingAndSortingRepository<T, ID>
+
+interface EmployeeRepository extends JpaRepository<T, ID>
 
 
+Spring MVC 
+-------------------
 
+    - DispatcherServlet 
+        - Entry point 
+        - delegates the request to appropriate controllers 
 
+    - Controller
+        - to handle the actual request and create response 
 
+    - Request Mapping 
+        - mapping a hander method for a specific request on a specific url 
+        - specify URL + REquest type + handler method 
+
+    - ViewResolver 
+        - locates the view to serve 
+        - it uses appropriate viewengine to create the 'view' to be sent to the client 
+        - used to find a template / jsp page / html page etc. 
+        
+         

@@ -1,5 +1,7 @@
 package com.demo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,9 +28,12 @@ public class SpringBootDataJpaDemo1Application implements CommandLineRunner {
 //	  System.out.println(e);
 		
 	
-		employeeService.findById(10L);
-		employeeService.findById(10L);
-		employeeService.findById(10L);
+//		employeeService.findById(10L);
+//		employeeService.findById(10L);
+//		employeeService.findById(10L);
+		
+		List<Employee> list = employeeService.getAllEmpByCity("Pune");
+		System.out.println(list);
 		
 	
 	}

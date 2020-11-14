@@ -18,6 +18,13 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeRepo employeeRepo;
 	
+	
+	
+	public List<Employee> getAllEmpByCity(String city){
+		//return employeeRepo.getAllEmployeesByCity(city);
+		return employeeRepo.findAllByCity(city);
+	}
+	
 	public Employee save(Employee emp) {
 
 		Employee e = null;

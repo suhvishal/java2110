@@ -1,11 +1,9 @@
-insert into Genre(_id, name) values (101, 'Action');
-insert into Genre(_id, name) values (102, 'Comedy');
-insert into Genre(_id, name) values (103, 'Horror');
-insert into Genre(_id, name) values (104, 'Drama');
-
-insert into Movie(_id, daily_rental_rate, number_in_stock, title, genre_id) values (10, 2, 4, 'Super 30', 101);
-insert into Movie(_id, daily_rental_rate, number_in_stock, title, genre_id) values (20, 7, 14, 'Hungama', 102);
-insert into Movie(_id, daily_rental_rate, number_in_stock, title, genre_id) values (30, 2, 41, 'Deewar', 101);
-insert into Movie(_id, daily_rental_rate, number_in_stock, title, genre_id) values (40, 7, 23, 'Sholay', 101);
-insert into Movie(_id, daily_rental_rate, number_in_stock, title, genre_id) values (50, 1, 43, 'Hera Pheri', 101);
-insert into Movie(_id, daily_rental_rate, number_in_stock, title, genre_id) values (60, 9, 10, 'Fir hera pheri', 101);
+insert into employee (id, fname, lname, city, salary) values(10, 'Akash','Khandelia','Mumbai', 1000.00);
+insert into Employee (id, fname, lname, city, salary) values(11, 'Bhakti','Padawe','Mumbai', 2000.00);
+insert into Employee (id, fname, lname, city, salary) values(12, 'Deepak','jaiswar','Mumbai', 3000.00);
+insert into Employee (id, fname, lname, city, salary) values(13, 'Mitul','Gandhi','Pune', 200000);
+insert into Employee (id, fname, lname, city, salary) values(14, 'Saurabh','Sharma','Mumbai', 4000.00);
+insert into Employee (id, fname, lname, city, salary) values(15, 'Mohit','Singhvi','Pune', 1500.00);
+insert into Employee (id, fname, lname, city, salary) values(16, 'Vamshi','Ganga','Mumbai', 2500.00);
+insert into Employee (id, fname, lname, city, salary) values(17, 'Zahid','Khan','Pune', 3500.00);
+insert into Employee (id, fname, lname, city, salary) values(18, 'Vishal','Shah','Mumbai', 4500.00);

@@ -7,6 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+
 
 @Entity
 public class Movie {
@@ -15,11 +18,14 @@ public class Movie {
 	@GeneratedValue
 	private Long _id;
 	
+	@NotNull(message = "title cannot be null")
 	private String title;
 	
+	@NotNull(message = "numberInstock cannot be null")
 	@Column(name = "numberInStock")
 	private Integer numberInStock;
 	
+	@NotNull(message = "dailyRentalRate cannot be null")
 	@Column(name = "dailyRentalRate")
 	private Integer dailyRentalRate;
 	

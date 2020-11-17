@@ -431,3 +431,75 @@ Spring MVC
         - used to find a template / jsp page / html page etc. 
         
          
+
+
+    JDBC 
+        - lot of code 
+        - lot of sql queries 
+
+    JDBCTEMPLATE 
+        - eliminates the code complexity of jdbc 
+        - it just simplifies jdbc operations 
+        - but, it uses SQL 
+
+        - lot of sql queries 
+
+    ORM Tools i.e.  Hibernate / Ibatis / toplink 
+        - ORM tools 
+        - object mapped with db table 
+        - OBJECT oriented queries i,e., HQL 
+        - 
+        - 
+
+    JPA 
+        - specification / standard for ORM 
+
+    JPA Providers 
+        - ORM tool which implements JPA specification / STANDARD 
+        - i.e. HIbernate Jpa / mybatis / eclipselink etc. 
+
+    Spring data jpa 
+        - providers abstraction over jpa 
+        - providers boilerplate code 
+
+
+
+
+
+
+            @Query(query="select e from Employee e WHERE ... ")
+
+
+
+
+
+
+    java reflection api 
+
+    creating custom proxy objects using java 
+
+    creating proxy objects using spring 
+
+    creating proxy objects using AOP 
+
+
+
+
+
+
+
+    class Emplooyee {
+
+        public String pubField;
+        private String privateField;
+
+        public void someMethod(){
+
+        }
+
+        private void showEmp(){
+            //
+        }
+    }
+
+    //new keyword 
